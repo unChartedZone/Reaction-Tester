@@ -78,13 +78,14 @@ function resetTimer() {
 
 }
 
-document.getElementById("startButton").onclick = function () {
+function start() {
+    timeNum = parseFloat('0.00');
     createShape();
-};
+}
 
-document.getElementById("stopButton").onclick = function () {
+function stop() {
     randomShape.style.visibility = "hidden";
-};
+}
 
 randomShape.onclick = function () {
     randomShape.style.visibility = "hidden";
