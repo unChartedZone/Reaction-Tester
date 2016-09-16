@@ -4,6 +4,11 @@ document.getElementById("stopButton").addEventListener("click",stop);
 randomShape.style.position = "relative";
 var startPressed = false;
 
+//Time vaiables
+var timer; //Handles setTimeout method
+var timeElement = document.getElementById("time");
+var time = parseFloat('0.000'); // Will be float that gets incremented
+
 function createShape() {
     randomShape.style.visibility = "visible";
     var indicator = oneOrZero();
@@ -14,6 +19,7 @@ function createShape() {
     if (indicator === 1) {
         createCircle();
     }
+    startTimer();
 }
 
 function oneOrZero() {
@@ -68,7 +74,6 @@ function start() {
         return;
     }
     startPressed = true;
-    timeNum = parseFloat('0.00');
     createShape();
 }
 
@@ -81,3 +86,7 @@ randomShape.onclick = function () {
     // console.log("It disappeared!");
     createShape();
 };
+
+function startTimer() {
+}
+
