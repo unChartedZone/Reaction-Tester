@@ -88,17 +88,3 @@ randomShape.onclick = function () {
     // console.log("It disappeared!");
     createShape();
 };
-
-function addition() {
-    var temp = parseFloat('0.00');
-    for (var i =0; i < 12; i++) {
-        temp += parseFloat('0.01');
-    }
-    console.log(temp.toFixed(2));
-
-    // var result = parseFloat('2.3') + parseFloat('2.4');
-    // alert(result.toFixed(2));
-}
-
-addition();
-console.log(parseFloat('0.60').toFixed(2));
