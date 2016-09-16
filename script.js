@@ -1,7 +1,6 @@
 var randomShape = document.getElementById("randomShape");
 var timer = document.getElementById("timer");
 randomShape.style.position = "relative";
-var counter = 0;
 
 function createShape() {
     randomShape.style.visibility = "visible";
