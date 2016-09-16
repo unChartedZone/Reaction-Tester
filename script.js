@@ -74,10 +74,6 @@ function startTimer() {
     var timer = setTimeout('startTimer()',1);
 }
 
-function resetTimer() {
-
-}
-
 function start() {
     timeNum = parseFloat('0.00');
     createShape();
