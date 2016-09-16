@@ -1,9 +1,8 @@
 var randomShape = document.getElementById("randomShape");
-var time = document.getElementById("time");
 document.getElementById("startButton").addEventListener("click",start);
 document.getElementById("stopButton").addEventListener("click",stop);
-var timeNum = parseFloat('0.00');
 randomShape.style.position = "relative";
+var startPressed = false;
 
 function createShape() {
     randomShape.style.visibility = "visible";
@@ -28,7 +27,6 @@ function createBox() {
     randomShape.style.width = num1.toString() + "px";
     randomShape.style.height = num2.toString() + "px";
     randomShape.style.backgroundColor = randomColor();
-    startTimer();
     randomShape.style.borderRadius = "0";
     randomPositions();
     // console.log("A box was made");
@@ -40,7 +38,6 @@ function createCircle() {
     randomShape.style.height = num.toString() + "px";
     randomShape.style.borderRadius = "50%";
     randomShape.style.backgroundColor = randomColor();
-    startTimer();
     randomPositions();
     // console.log("A circle was made");
 }
@@ -66,17 +63,11 @@ function randomPositions() {
     randomShape.style.top = upper.toString() + "px";
 }
 
-function startTimer() {
-    timeNum += parseFloat('0.01');
-    if (timeNum.toFixed(2) === parseFloat('.61').toFixed(2)) {
-       clearTimeout(timer);
-       return;
-    }
-    time.innerHTML = timeNum.toFixed(2);
-    var timer = setTimeout('startTimer()',1);
-}
-
 function start() {
+    if(startPressed) {
+        return;
+    }
+    startPressed = true;
     timeNum = parseFloat('0.00');
     createShape();
 }
