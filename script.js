@@ -1,5 +1,7 @@
 var randomShape = document.getElementById("randomShape");
 var time = document.getElementById("time");
+document.getElementById("startButton").addEventListener("click",start);
+document.getElementById("stopButton").addEventListener("click",stop);
 var timeNum = parseFloat('0.00');
 randomShape.style.position = "relative";
 
