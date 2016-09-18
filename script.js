@@ -7,7 +7,6 @@ var startPressed = false;
 //Time vaiables
 var timer = new Date().getTime(); //Handles date method
 var timeElement = document.getElementById("time");
-var time = parseFloat('0.000'); // Will be float that gets incremented
 
 function createShape() {
     randomShape.style.visibility = "visible";
@@ -83,11 +82,14 @@ function stop() {
 
 randomShape.onclick = function () {
     randomShape.style.visibility = "hidden";
-    // console.log("It disappeared!");
     var end = new Date().getTime();
-    var timeTaken = end - timer;
-    console.log(timeTaken);
-    //createShape();
+    var timeTaken = end - timer; //Get time it took in unformatted milliseconds
+    var timeTakenString = timeTaken.toString();
+    var lastThreeDigits = timeTakenString.slice(timeTakenString.length - 3);
+    timeTakenString = timeTakenString.slice(0,timeTakenString.length - 3);
+    lastThreeDigits = '.' + lastThreeDigits;
+    timeTakenString += lastThreeDigits;
+    timeElement.innerHTML = timeTakenString;
     setTimeout("createShape()",1000);
 };
 
