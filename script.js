@@ -83,13 +83,8 @@ function stop() {
 randomShape.onclick = function () {
     randomShape.style.visibility = "hidden";
     var end = new Date().getTime();
-    var timeTaken = end - timer; //Get time it took in unformatted milliseconds
-    var timeTakenString = timeTaken.toString();
-    var lastThreeDigits = timeTakenString.slice(timeTakenString.length - 3);
-    timeTakenString = timeTakenString.slice(0,timeTakenString.length - 3);
-    lastThreeDigits = '.' + lastThreeDigits;
-    timeTakenString += lastThreeDigits;
-    timeElement.innerHTML = timeTakenString;
+    var timeTaken = (end - timer) / 1000; //Get time it took in formatted milliseconds
+    timeElement.innerHTML = timeTaken.toString();
     setTimeout("createShape()",1000);
 };
 
