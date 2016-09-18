@@ -5,7 +5,7 @@ randomShape.style.position = "relative";
 var startPressed = false;
 
 //Time vaiables
-var timer; //Handles setTimeout method
+var timer = new Date().getTime(); //Handles date method
 var timeElement = document.getElementById("time");
 var time = parseFloat('0.000'); // Will be float that gets incremented
 
@@ -14,7 +14,7 @@ function createShape() {
     var indicator = oneOrZero();
     if (indicator === 0) {
         createBox();
-        return;
+        // return;
     }
     if (indicator === 1) {
         createCircle();
@@ -84,9 +84,14 @@ function stop() {
 randomShape.onclick = function () {
     randomShape.style.visibility = "hidden";
     // console.log("It disappeared!");
-    createShape();
+    var end = new Date().getTime();
+    var timeTaken = end - timer;
+    console.log(timeTaken);
+    //createShape();
+    setTimeout("createShape()",1000);
 };
 
 function startTimer() {
+    timer = new Date().getTime();
 }
 
