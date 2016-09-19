@@ -7,6 +7,7 @@ var startPressed = false;
 //Time vaiables
 var timer = new Date().getTime(); //Handles date method
 var timeElement = document.getElementById("time");
+var zeroTime = timeElement.innerHTML;
 
 function createShape() {
     randomShape.style.visibility = "visible";
@@ -78,6 +79,8 @@ function start() {
 
 function stop() {
     randomShape.style.visibility = "hidden";
+    timeElement.innerHTML = zeroTime;
+    startPressed = false;
 }
 
 randomShape.onclick = function () {
