@@ -70,6 +70,9 @@ function randomPositions() {
 }
 
 function start() {
+    if(randomShape.style.visibilty === "hidden") {
+        randomShape.style.visibilty = "visible";
+    }
     if(startPressed) {
         return;
     }
